@@ -17,8 +17,3 @@ spec:
           image: "${IMAGE_NAME}:${BUILD_TIMESTAMP_DEPLOYMENT}"
           ports:
             - containerPort: 8080
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
