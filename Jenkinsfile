@@ -25,7 +25,7 @@ pipeline {
                     sh 'docker push pranavagrawalcs/survey-app:${BUILD_TIMESTAMP}'
                     sh 'docker image rm pranavagrawalcs/survey-app:${BUILD_TIMESTAMP} -f'
 
-                    sh 'kubectl apply -f service.yaml'
+                    sh 'kubectl apply -f service.yaml --validate=false'
                     sh 'envsubst < deployment.yaml > deployment_resolved.yaml'
                     sh 'cat deployment_resolved.yaml'
                     sh 'kubectl apply -f deployment_resolved.yaml'
