@@ -20,6 +20,7 @@ pipeline {
                     sh 'echo ${IMAGE_NAME_TEST}'
                     sh 'echo ${BUILD_TIMESTAMP_DEPLOYMENT}'
 
+                    sh 'echo ${DOCKER_CREDENTIALS}'
                     sh 'docker login -u pranavagrawalcs -p ${DOCKER_CREDENTIALS}'
                     sh 'docker build -t pranavagrawalcs/survey-app:${BUILD_TIMESTAMP} .'
                     sh 'docker push pranavagrawalcs/survey-app:${BUILD_TIMESTAMP}'
