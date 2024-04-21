@@ -1,4 +1,4 @@
-ocpipeline {
+pipeline {
     agent any
 
     environment {
